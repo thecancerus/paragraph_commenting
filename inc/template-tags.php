@@ -155,6 +155,7 @@ function inline_comments_load_template(){
         <?php if ( $comments ) : foreach( $comments as $comment) : ?>
             <?php
             
+            // ck get the paragraph id from the comment meta
             $para_id = get_comment_meta( $comment->comment_ID, 'para_id', true );
             
             $user = new WP_User( $comment->user_id );
