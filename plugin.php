@@ -76,4 +76,7 @@ function inline_comments_enqueue_scripts(){
     wp_register_script( 'textarea_auto_expand-script', plugin_dir_url( __FILE__ ) . 'vendor/textarea-auto-expand/jquery.textarea_auto_expand.js' );
     wp_register_script( $clean_name . '-script', plugin_dir_url( __FILE__ ) . 'inc/js/script.js', array('jquery', 'textarea_auto_expand-script') );
 }
-add_action('wp_enqueue_scripts', 'inline_comments_enqueue_scripts', 2);
+
+if (is_singular()) {
+    add_action('wp_enqueue_scripts', 'inline_comments_enqueue_scripts', 2);
+}
