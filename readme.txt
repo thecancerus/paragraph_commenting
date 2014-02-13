@@ -1,3 +1,19 @@
+=== Paragraph Commenting ===
+Contributors: Chris Knowles
+Tags: comments, ajax, annotations
+Requires at least: 3.6
+Tested up to: 3.8.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This plugin brings paragraph commenting to virtually any WordPress theme.
+
+It is built on top of Zane Matthew's Inline Ajax Comment plugin and his original readme is kept here for an explanation of his code.
+
+To read about how I changed the original plugin to provide annotations go to : http://premium.wpmudev.org/how-to-have-comments-just-like-medium
+
+
+
 === Inline Ajax Comments ===
 Contributors: ZaneMatthew
 Donate link: http://zanematthew.com/
