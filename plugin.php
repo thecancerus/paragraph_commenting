@@ -69,7 +69,8 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/template-tags.php';
 
 
 function inline_comments_enqueue_scripts(){
-    $plugin_headers = get_file_data( __FILE__, array( 'Version' => 'Version', 'Name' => 'Plugin Name' ) );
+
+    $plugin_headers = get_file_data( __FILE__, array( 'Version' => 'Version', 'Name' => 'Original Plugin Name' ) );
     $clean_name = strtolower( str_replace( ' ', '-', $plugin_headers['Name'] ) );
 
     wp_register_style( $clean_name . '-style', plugin_dir_url( __FILE__ ) . 'inc/css/style.css' );
@@ -77,6 +78,4 @@ function inline_comments_enqueue_scripts(){
     wp_register_script( $clean_name . '-script', plugin_dir_url( __FILE__ ) . 'inc/js/script.js', array('jquery', 'textarea_auto_expand-script') );
 }
 
-if (is_singular()) {
-    add_action('wp_enqueue_scripts', 'inline_comments_enqueue_scripts', 2);
-}
+add_action('wp_enqueue_scripts', 'inline_comments_enqueue_scripts', 2);
