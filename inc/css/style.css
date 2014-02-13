@@ -157,10 +157,22 @@
 	margin: 20px 0px;
 }
 
-.inline-comments-container {
+div#comments-container {
 	width: 600px;
 	margin: 0 auto;
 	position: absolute;
-	background: '#fff';
+	background: #fff;
 	border: 2px solid #000;
+}
+
+.inline-comments-container {
+	background:#fff;
+}
+
+a.toggle_comments {
+	background: url('comments-icon.png') left center no-repeat;
+	text-decoration: none;
+	font-weight: bold;
+	padding-left: 16px;
+	margin-left: 5px;
 }
