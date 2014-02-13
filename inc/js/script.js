@@ -158,7 +158,7 @@ jQuery(document).ready(function( $ ){
 		
 		}
 		
-		$( 'div.inline-comments-content-comment-fields' ).hide();
+		$( 'div#comments-container' ).hide();
 	
 		// set up paragraph ids	
 		// WARNING! if text changes then hashCode will change and comments will be orphaned
@@ -189,7 +189,7 @@ jQuery(document).ready(function( $ ){
 		
 		var orphans = $('div.orphan-comment');
 		
-		if ( orphans ) {
+		if ( orphans.length > 0 ) {
 		
 			$('<div class="orphan-comments-container"><p>These are orphan comments - the paragraph they were attached to has either been edited or deleted.</p></div>').insertAfter('div[name="comments"]');
 			$('div.orphan-comments-container').append( orphans );	
@@ -205,12 +205,13 @@ jQuery(document).ready(function( $ ){
 	
 		var container = $('div[name="comments"]');
 				
-		if ( container.css('z-index') == '999999' ) {
+		if ( container.css('display') == 'block' ) {
 		
-			container.css('z-index' , '-999999');
+			container.hide();
 			
 			return;
 		}
+		
 	
 		// get the position of the clicked comment count
 		var position = $( this ).position();
@@ -229,6 +230,7 @@ jQuery(document).ready(function( $ ){
 		// style the comment box
 		container.css('z-index' , '999999' );
 		container.css('top' , position.top + 30 );
+		container.show();
 
 		
 	});
