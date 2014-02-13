@@ -6,6 +6,9 @@
 if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly' );
 ?>
 <?php
+
+if ( ( comments_open() ) ) :
+	
     $name = 'Name&#8230';
     $email = 'Email&#8230';
     $website = 'Website&#8230';
@@ -22,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
     }
 ?>
 <noscript>JavaScript is required to load the comments.</noscript>
-<div class="inline-comments-container" name="comments">
+<div class="inline-comments-container" name="comments" id="comments-container">
     <div id="inline_comments_ajax_handle" class="last-child" data-post_id="<?php echo $post->ID; ?>">
     <div id="inline_comments_ajax_target" style="display: none;"></div>
     <div class="inline-comments-loading-icon">Loading Comments&#8230;</div>
@@ -54,3 +57,5 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
     <?php endif; ?>
 </div>
 </div>
+
+<?php endif; ?>
